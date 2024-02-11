@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="759.0" prefWidth="1221.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutY="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="772.0" prefWidth="1221.0" spacing="1.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="16.0" prefWidth="1211.0" spacing="5.0">
+               <children>
+                  <Label fx:id="labelMsg" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="1154.0" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="26.0" prefWidth="1211.0" spacing="2.0">
+               <children>
+                  <TextField fx:id="textFieldSearch" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="495.0" promptText="Search text" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="buttonHelp" disable="true" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressedButtonHelp" prefHeight="25.0" prefWidth="52.0" text="Help" />
+               </children>
+               <padding>
+                  <Insets bottom="3.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="1215.0" spacing="5.0">
+               <children>
+                  <RadioButton fx:id="radioButtonNr" minWidth="-Infinity" mnemonicParsing="false" prefHeight="17.0" prefWidth="48.0" text="Nr">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="column_search" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButtonBookMark" layoutX="10.0" layoutY="15.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="103.0" text="Bookmark" toggleGroup="$column_search" />
+                  <RadioButton fx:id="radioButtonDate" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="67.0" style="-fx-font-weight: bold;" text="Date" toggleGroup="$column_search" />
+                  <RadioButton fx:id="radioButtonStar" layoutX="58.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="73.0" style="-fx-font-weight: bold;" text="Star" toggleGroup="$column_search" />
+                  <RadioButton fx:id="radioButtonKeyWord" layoutX="136.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="105.0" style="-fx-font-weight: bold;" text="Keyword" toggleGroup="$column_search" />
+                  <RadioButton fx:id="radioButtonTitle" layoutX="186.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="69.0" style="-fx-font-weight: bold;" text="Title" toggleGroup="$column_search" />
+                  <RadioButton fx:id="radioButtonWebAddress" layoutX="394.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="131.0" style="-fx-font-weight: bold;" text="Web address" toggleGroup="$column_search" />
+                  <RadioButton fx:id="radioButtonGlobal" layoutX="314.0" layoutY="15.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="134.0" selected="true" style="-fx-font-weight: bold;" text="Global search" toggleGroup="$column_search" />
+                  <CheckBox fx:id="checkBoxInCaseSearch" mnemonicParsing="false" onAction="#pressedCheckBoxInCaseSearch" prefHeight="18.0" prefWidth="150.0" style="-fx-font-weight: bold;" text="Incase search" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" depthTest="ENABLE" prefHeight="68.0" prefWidth="1215.0" spacing="5.0">
+               <children>
+                  <Button fx:id="buttonGlobalSearch" mnemonicParsing="false" onAction="#pressedButtonGlobalSearch" prefHeight="25.0" prefWidth="153.0" style="-fx-font-weight: bold;" text="Search globally" />
+                  <Button fx:id="buttonSearch" mnemonicParsing="false" onAction="#pressedButtonSearch" prefHeight="25.0" prefWidth="156.0" style="-fx-font-weight: bold;" text="Column search" />
+                  <ToggleButton fx:id="buttonListAll" mnemonicParsing="false" onAction="#pressedButtonListAll" prefHeight="25.0" prefWidth="118.0" style="-fx-font-weight: bold;" text="List All" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Separator minHeight="-Infinity" prefHeight="2.0" prefWidth="1215.0" style="-fx-background-color: black;">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Separator>
+            <VBox prefHeight="117.0" prefWidth="1215.0" spacing="5.0">
+               <VBox.margin>
+                  <Insets bottom="3.0" top="3.0" />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="textFieldShow" editable="false" prefHeight="30.0" prefWidth="1215.0" promptText="Shown selected text field value">
+                     <padding>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </padding>
+                  </TextField>
+                  <FlowPane fx:id="flowPaneEdit" focusTraversable="true" hgap="3.0" vgap="2.0">
+                     <children>
+                        <Label fx:id="labelOrder" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="48.0" textAlignment="RIGHT" />
+                        <ToggleButton fx:id="buttonBookMark" contentDisplay="CENTER" mnemonicParsing="false" onAction="#pressedButtonBookMark" prefHeight="30.0" prefWidth="100.0" text="Bookmark" />
+                        <Label fx:id="labelDate" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="14.0" textAlignment="JUSTIFY" />
+                        <ComboBox fx:id="comboStar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="142.0" promptText="Star" />
+                        <TextField fx:id="textFieldKeyWord" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="183.0" promptText="Keywords" />
+                        <TextField fx:id="textFieldTitle" layoutX="212.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="396.0" promptText="Title" />
+                        <TextField fx:id="textFieldWebAddress" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" prefWidth="732.0" promptText="Web address" />
+                        <Button fx:id="buttonSave" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressedButtonSave" prefHeight="25.0" prefWidth="84.0" style="-fx-font-weight: bold;" text="Update" />
+                        <Button fx:id="buttonOpenBrowser" mnemonicParsing="false" onAction="#pressedButtonOpenBrowser" style="-fx-font-weight: bold;" text="Open in browser" />
+                        <Button fx:id="buttonDelete" mnemonicParsing="false" onAction="#pressedButtonDelete" style="-fx-font-weight: bold;" text="Delete" />
+                        <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#pressedButtonAdd" prefHeight="15.0" prefWidth="53.0" style="-fx-font-weight: bold;" text="Add" />
+                        <Button fx:id="buttonNewRow" layoutX="965.0" layoutY="48.0" mnemonicParsing="false" onAction="#pressedButtonNewRow" prefHeight="30.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Empty fields" />
+                        <Button fx:id="buttonCopyIntoClipBoard" layoutX="1068.0" layoutY="45.0" mnemonicParsing="false" onAction="#pressedButtonCopyIntoClipBoard" prefHeight="30.0" prefWidth="328.0" style="-fx-font-weight: bold;" text="Copy selected row field into clipboard" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </FlowPane>
+               </children>
+            </VBox>
+            <Separator layoutX="13.0" layoutY="105.0" minHeight="-Infinity" prefHeight="2.0" prefWidth="1215.0" style="-fx-background-color: black;">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </Separator>
+            <SplitPane fx:id="splitPanelWebPages" dividerPositions="0.5" orientation="VERTICAL" prefHeight="526.0" prefWidth="1215.0">
+               <items>
+                  <TableView fx:id="tableViewWebPages" prefHeight="298.0" prefWidth="949.0">
+                     <columns>
+                        <TableColumn fx:id="tableColumnNr" prefWidth="47.6000337600708" style="-fx-alignment:: RIGHT;" text="Nr" />
+                        <TableColumn fx:id="tableColumnBookMk" prefWidth="69.5" style="-fx-alignment:: RIGHT;" text="B.mark" />
+                        <TableColumn fx:id="tableColumnDate" prefWidth="109.5" text="Date" />
+                        <TableColumn fx:id="tableColumnStar" prefWidth="42.0" text="Star" />
+                        <TableColumn fx:id="tableColumnKeyWord" prefWidth="165.20001220703125" text="Keyword" />
+                        <TableColumn fx:id="tableColumnTitle" prefWidth="437.6000061035156" text="Title" />
+                        <TableColumn fx:id="tableColumnWebAddress" prefWidth="363.2000732421875" text="Web address" />
+                     </columns>
+                  </TableView>
+                  <WebView fx:id="webView" minHeight="-1.0" minWidth="-1.0" prefHeight="247.0" prefWidth="1178.0" />
+               </items>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </SplitPane>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+      </VBox>
+   </children>
+</AnchorPane>

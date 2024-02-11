@@ -1,7 +1,9 @@
 # Compiled class file
 *.class
 
-build/*
+build/classes/*
+build/generated/*
+build/tmp/*
 gradle/*
 .gradle/*
 
@@ -15,7 +17,6 @@ gradle/*
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
